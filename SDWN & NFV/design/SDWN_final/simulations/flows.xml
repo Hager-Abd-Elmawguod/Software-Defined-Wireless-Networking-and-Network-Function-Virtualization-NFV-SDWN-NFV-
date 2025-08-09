@@ -1,0 +1,29 @@
+<flow-table>
+    <!-- Default rule: Send unmatched packets to controller -->
+    <flow priority="0">
+        <match></match>
+        <action>
+            <output port="controller"/>
+        </action>
+    </flow>
+
+    <!-- Allow ICMP (ping) between hosts -->
+    <flow priority="100">
+        <match>
+            <ipv4-proto type="icmp"/>
+        </match>
+        <action>
+            <output port="normal"/> <!-- Forward normally -->
+        </action>
+    </flow>
+
+    <!-- Route HTTP traffic to NFV server -->
+    <flow priority="200">
+        <match>
+            <tcp dst-port="80"/>
+        </match>
+        <action>
+            <output port="nfvServer"/> <!-- Send to VNF -->
+        </action>
+    </flow>
+</flow-table>

@@ -1,0 +1,432 @@
+version 3
+run General-0-20250520-09:43:18-16624
+attr configname General
+attr datetime 20250520-09:43:18
+attr datetimef 20250520-094318
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network sdwn_final.simulations.Network1
+attr processid 16624
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../inet/images;../../OpenFlow/images
+config network sdwn_final.simulations.Network1
+config sim-time-limit 2s
+config *.radioMedium.typename Ieee80211RadioMedium
+config *.radioMedium.backgroundNoise.power -110dBm
+config *.radioMedium.analogModelType "\"ScalarAnalogModel\""
+config **.radio.transmitter.power 2000mW
+config **.radio.receiver.sensitivity -85dBm
+config **.radio.receiver.snirThreshold 4dB
+config *.host*.wlan[0].ssid "\"SDWN-Net\""
+config *.host*.wlan[0].bitrate 54Mbps
+config *.host*.wlan[0].radio.transmitter.power 20mW
+config *.host*.wlan[0].radio.transmitter.communicationRange 100m
+config *.host*.wlan[0].mac.useAck true
+config *.accessPoint.wlan[0].ssid "\"SDWN-Net\""
+config *.accessPoint.wlan[0].channelNumber 1
+config *.accessPoint.wlan[0].bitrate 54Mbps
+config *.accessPoint.wlan[0].radio.transmitter.power 100mW
+config *.accessPoint.wlan[0].mac.useAck true
+config *.accessPoint.wlan[0].radio.transmitter.communicationRange 200m
+config *.controller.flowTableConfig "xmldoc(\"flows.xml\")"
+config *.switch.controllerAddress "\"10.0.0.100\""
+config *.switch.flowTableSize 1000
+config .controller.tcpApp[].localPort 6633
+config .switch.tcpApp[*].connectAddress "\"10.0.0.100\""
+config .switch.tcpApp[*].connectPort 6633
+config .switch.tcpApp[*].localPort -1
+config .switch.tcpApp[*].startTime 0.1s
+config .switch.tcp.mss 1460
+config .switch.tcp.sendQueue "\"inet::tcp::TcpSendQueue\""
+config .switch.tcp.receiveQueue "\"inet::tcp::TcpReceiveQueue\""
+config *.host1.ipv4.address "\"10.0.0.1\""
+config *.host1.ipv4.netmask "\"255.255.255.0\""
+config *.host2.ipv4.address "\"10.0.0.2\""
+config *.host2.ipv4.netmask "\"255.255.255.0\""
+config *.host3.ipv4.address "\"10.0.0.3\""
+config *.host3.ipv4.netmask "\"255.255.255.0\""
+config *.accessPoint1.ipv4.address "\"10.0.0.10\""
+config *.accessPoint1.ipv4.netmask "\"255.255.255.0\""
+config *.accessPoint2.ipv4.address "\"10.0.0.20\""
+config *.accessPoint2.ipv4.netmask "\"255.255.255.0\""
+config *.switch.ipv4.address "\"10.0.0.30\""
+config *.switch.ipv4.netmask "\"255.255.255.0\""
+config *.controller.ipv4.address "\"10.0.0.100\""
+config *.controller.ipv4.netmask "\"255.255.255.0\""
+config .visualizer..displayLinks true
+config .visualizer..physicalLinkVisualizer.displayLinks true
+config .visualizer..dataLinkVisualizer.displayLinks true
+config allow-object-stealing-on-deletion true
+config *.switch1.ethg[0].datarate 100Mbps
+config *.switch2.ethg[0].datarate 100Mbps
+config *.controller.ethg[0].datarate 100Mbps
+config .switch.vfn.enabled true
+config *.controller.vfn.enabled true
+
+vector 0 Network1.AccessPoint1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 1 Network1.AccessPoint1.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioChannelChanged
+attr title "Radio channel"
+vector 2 Network1.AccessPoint2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 3 Network1.AccessPoint2.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioChannelChanged
+attr title "Radio channel"
+vector 4 Network1.host1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 5 Network1.host1.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioChannelChanged
+attr title "Radio channel"
+vector 6 Network1.host2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 7 Network1.host2.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioChannelChanged
+attr title "Radio channel"
+vector 8 Network1.host3.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioModeChanged
+attr title "Radio mode"
+vector 9 Network1.host3.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source radioChannelChanged
+attr title "Radio channel"
+vector 10 Network1.AccessPoint1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 11 Network1.AccessPoint2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 12 Network1.host1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 13 Network1.host2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 14 Network1.host3.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source receptionStateChanged
+attr title "Radio reception state"
+vector 15 Network1.AccessPoint1.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 16 Network1.AccessPoint1.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 17 Network1.AccessPoint1.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 18 Network1.AccessPoint1.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 19 Network1.AccessPoint1.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 20 Network1.AccessPoint2.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 21 Network1.AccessPoint2.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 22 Network1.AccessPoint2.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 23 Network1.AccessPoint2.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 24 Network1.AccessPoint2.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 25 Network1.host1.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 26 Network1.host1.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 27 Network1.host1.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 28 Network1.host1.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 29 Network1.host1.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 30 Network1.host2.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 31 Network1.host2.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 32 Network1.host2.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 33 Network1.host2.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 34 Network1.host2.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 35 Network1.host3.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 36 Network1.host3.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 37 Network1.host3.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 38 Network1.host3.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+vector 39 Network1.host3.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source stateChanged
+attr title "contention state"
+0	0	0	0
+0	0	0	2
+1	0	0	0
+2	0	0	0
+2	0	0	2
+3	0	0	0
+4	0	0	0
+4	0	0	2
+5	0	0	0
+6	0	0	0
+6	0	0	2
+7	0	0	0
+8	0	0	0
+8	0	0	2
+9	0	0	0
+10	0	0	1
+11	0	0	1
+12	0	0	1
+13	0	0	1
+14	0	0	1
+15	0	0	0
+15	0	0	0
+16	0	0	0
+16	0	0	0
+17	0	0	0
+17	0	0	0
+18	0	0	0
+18	0	0	0
+19	0	0	0
+19	0	0	0
+20	0	0	0
+20	0	0	0
+21	0	0	0
+21	0	0	0
+22	0	0	0
+22	0	0	0
+23	0	0	0
+23	0	0	0
+24	0	0	0
+24	0	0	0
+25	0	0	0
+25	0	0	0
+26	0	0	0
+26	0	0	0
+27	0	0	0
+27	0	0	0
+28	0	0	0
+28	0	0	0
+29	0	0	0
+29	0	0	0
+30	0	0	0
+30	0	0	0
+31	0	0	0
+31	0	0	0
+32	0	0	0
+32	0	0	0
+33	0	0	0
+33	0	0	0
+34	0	0	0
+34	0	0	0
+35	0	0	0
+35	0	0	0
+36	0	0	0
+36	0	0	0
+37	0	0	0
+37	0	0	0
+38	0	0	0
+38	0	0	0
+39	0	0	0
+39	0	0	0
+vector 40 Network1.host1.wlan[0].agent sentRequest:vector ETV
+attr recordingmode vector
+attr title "sent requests"
+vector 41 Network1.AccessPoint1.wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 42 Network1.AccessPoint1.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets sent to lower layer, packetBytes"
+vector 43 Network1.AccessPoint1.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+vector 44 Network1.AccessPoint2.wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, packetBytes"
+vector 45 Network1.AccessPoint2.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 46 Network1.host2.wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, packetBytes"
+vector 47 Network1.host2.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 48 Network1.host1.wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, packetBytes"
+vector 49 Network1.host1.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 50 Network1.host3.wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, packetBytes"
+vector 51 Network1.host3.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 52 Network1.AccessPoint2.wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 53 Network1.AccessPoint2.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets sent to lower layer, packetBytes"
+vector 54 Network1.AccessPoint2.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "Radio transmission state"
+vector 55 Network1.AccessPoint1.wlan[0].mac rcvdPkFromLL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, packetBytes"
+vector 56 Network1.AccessPoint1.wlan[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 57 Network1.host1.wlan[0].mac rcvdPkFromHL:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 58 Network1.host1.wla
